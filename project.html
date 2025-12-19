@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - CS282</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .detail-value {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #5568d3;
+        }
+        
+        .files-section {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .file-card {
+            padding: 1rem;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 150px;
+            transition: all 0.3s;
+        }
+        
+        .file-card:hover {
+            background: #f0f0ff;
+            transform: translateY(-2px);
+        }
+        
+        .file-card a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .file-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .project-header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .project-header h1 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            color: #666;
+        }
+        
+        .project-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .images-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .images-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .images-gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CS282 Optimization Extensions</h1>
+        <p>Project Details</p>
+        <p class="curators">Curated by Yu-Jen (Jennifer) Lin and Yaqi Su<br>
+        <a href="mailto:jenniferyjlin@berkeley.edu">jenniferyjlin@berkeley.edu</a> · 
+        <a href="mailto:yaqisu@berkeley.edu">yaqisu@berkeley.edu</a></p>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-button">← Back to All Projects</a>
+        
+        <section>
+            <div id="project-content">
+                <div class="loading">Loading project details...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>UC Berkeley CS282 - Deep Neural Networks</p>
+    </footer>
+
+    <script>
+        // Get project ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+
+        // Load and display project details
+        async function loadProjectDetails() {
+            try {
+                const response = await fetch('data/data.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load data');
+                }
+                const data = await response.json();
+                
+                // Find the specific project
+                const project = data.submissions.find(p => String(p.ed_id) === String(projectId));
+                
+                if (!project) {
+                    document.getElementById('project-content').innerHTML = 
+                        '<p class="error">Project not found.</p>';
+                    return;
+                }
+                
+                displayProject(project);
+            } catch (error) {
+                console.error('Error loading project:', error);
+                document.getElementById('project-content').innerHTML = 
+                    '<p class="error">Error loading project details.</p>';
+            }
+        }
+
+        function displayProject(project) {
+            const content = document.getElementById('project-content');
+            
+            // Generate files HTML
+            let filesHtml = '';
+            if (project.files && project.files.length > 0) {
+                project.files.forEach(file => {
+                    const icon = getFileIcon(file.type);
+                    const urls = (file.url || '').split(',').map(u => u.trim());
+                    
+                    urls.forEach((url, idx) => {
+                        const linkText = urls.length > 1 ? `${file.name} (${idx + 1})` : file.name;
+                        filesHtml += `
+                            <div class="file-card">
+                                <a href="data/${url}" target="_blank">
+                                    <div style="font-size: 2rem;">${icon}</div>
+                                    ${linkText}
+                                </a>
+                            </div>
+                        `;
+                    });
+                });
+            }
+            
+            // Generate images HTML
+            let imagesHtml = '';
+            if (project.images && project.images.length > 0) {
+                imagesHtml = '<div class="detail-section"><div class="detail-label">Images</div><div class="images-gallery">';
+                project.images.forEach(img => {
+                    imagesHtml += `<img src="data/${img.url}" alt="${img.name}" onclick="window.open('data/${img.url}', '_blank')">`;
+                });
+                imagesHtml += '</div></div>';
+            }
+            
+            content.innerHTML = `
+                <div class="project-header">
+                    <h1>${project.title}</h1>
+                    <div class="project-meta">
+                        <span><strong>Ed ID:</strong> ${project.ed_id}</span>
+                        <span><strong>Student:</strong> ${project.student_name || 'N/A'}</span>
+                        <span><strong>Homework:</strong> HW${project.hw}</span>
+                    </div>
+                </div>
+
+                ${project.summary ? `
+                    <div class="detail-section">
+                        <div class="detail-label">Summary</div>
+                        <div class="detail-value">${project.summary}</div>
+                    </div>
+                ` : ''}
+
+                ${imagesHtml}
+
+                <div class="detail-section">
+                    <div class="detail-label">Downloads</div>
+                    <div class="files-section">
+                        ${filesHtml || '<p>No files available</p>'}
+                    </div>
+                </div>
+            `;
+        }
+
+        function getFileIcon(type) {
+            const icons = {
+                'pdf': '📄',
+                'ipynb': '📓',
+                'zip': '📦',
+                'colab': '🔗',
+                'gdrive': '📁',
+                'png': '🖼️',
+                'jpg': '🖼️',
+                'jpeg': '🖼️'
+            };
+            return icons[type] || '📎';
+        }
+
+        // Load project when page loads
+        document.addEventListener('DOMContentLoaded', loadProjectDetails);
+    </script>
+</body>
+</html>

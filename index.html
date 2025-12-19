@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS282 Optimization Extensions - Student Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CS282 Optimization Extensions</h1>
+        <p>Student Projects on Optimizer Implementations</p>
+        <p class="curators">Curated by Yu-Jen (Jennifer) Lin and Yaqi Su<br>
+        <a href="mailto:jenniferyjlin@berkeley.edu">jenniferyjlin@berkeley.edu</a> · 
+        <a href="mailto:yaqisu@berkeley.edu">yaqisu@berkeley.edu</a></p>
+    </header>
+
+    <main>
+        <!-- Search Section -->
+        <section id="search-section">
+            <h2>Search Projects</h2>
+            <div class="search-container">
+                <select id="search-field">
+                    <option value="all">All Fields</option>
+                    <option value="student_name">Student</option>
+                    <option value="title">Title</option>
+                    <option value="summary">Summary</option>
+                </select>
+                <input type="text" id="search-input" placeholder="Search...">
+                <button onclick="searchProjects()">Search</button>
+                <button onclick="clearSearch()">Clear</button>
+            </div>
+            <div id="search-results"></div>
+        </section>
+
+        <!-- Overview Matrix -->
+        <section id="overview-section">
+            <h2>Project Overview</h2>
+            <p class="subtitle">Click any project title to view details</p>
+            <div id="matrix-container"></div>
+        </section>
+
+        <!-- Full Projects Table -->
+        <section id="projects-section">
+            <h2>All Projects</h2>
+            <div class="filter-container">
+                <label for="hw-filter">Filter by Homework:</label>
+                <select id="hw-filter" onchange="filterTableByHomework()">
+                    <option value="all">All Homeworks</option>
+                    <!-- Will be populated by JavaScript -->
+                </select>
+                <button onclick="clearTableFilter()">Clear Filter</button>
+            </div>
+            <div class="table-container">
+                <table id="projects-table">
+                    <thead>
+                        <tr>
+                            <th>Ed ID</th>
+                            <th>Student</th>
+                            <th>HW</th>
+                            <th>Title</th>
+                            <th>Summary</th>
+                            <th>Files</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projects-tbody">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>UC Berkeley CS282 - Deep Neural Networks</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
