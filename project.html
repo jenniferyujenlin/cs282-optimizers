@@ -185,7 +185,7 @@
                         const linkText = urls.length > 1 ? `${file.name} (${idx + 1})` : file.name;
                         filesHtml += `
                             <div class="file-card">
-                                <a href="data/${url}" target="_blank">
+                                <a href="${url}" target="_blank">
                                     <div style="font-size: 2rem;">${icon}</div>
                                     ${linkText}
                                 </a>
@@ -200,7 +200,7 @@
             if (project.images && project.images.length > 0) {
                 imagesHtml = '<div class="detail-section"><div class="detail-label">Images</div><div class="images-gallery">';
                 project.images.forEach(img => {
-                    imagesHtml += `<img src="data/${img.url}" alt="${img.name}" onclick="window.open('data/${img.url}', '_blank')">`;
+                    imagesHtml += `<img src="${img.url}" alt="${img.name}" onclick="window.open('${img.url}', '_blank')">`;
                 });
                 imagesHtml += '</div></div>';
             }

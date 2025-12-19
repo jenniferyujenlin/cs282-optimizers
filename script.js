@@ -32,15 +32,16 @@ async function loadData() {
 function generateMatrix() {
     const container = document.getElementById('matrix-container');
     
-    // Define optimizer categories (based on professor's list)
+    // Define optimizer categories in logical order
+    // Order: Foundational optimizers → Variants → Learning rate studies
     const optimizerCategories = [
+        'MuP',
         'Muon',
+        'Muon variants',
         'SOAP',
         'Lion',
-        'LR with batchsize',
-        'Muon variants',
-        'MuP',
-        'Memory-efficient optimizers'
+        'Shampoo',
+        'LR with batchsize'
     ];
     
     // Get unique homeworks and sort
@@ -209,13 +210,13 @@ function generateFileLinks(project) {
         
         urls.forEach((singleUrl, idx) => {
             const linkText = urls.length > 1 ? `${file.name} (${idx + 1})` : file.name;
-            html += `<a href="data/${singleUrl}" class="file-link" target="_blank">${icon} ${linkText}</a> `;
+            html += `<a href="${singleUrl}" class="file-link" target="_blank">${icon} ${linkText}</a> `;
         });
     });
     
     // Add image links
     images.forEach(img => {
-        html += `<a href="data/${img.url}" class="file-link" target="_blank">🖼️ ${img.name}</a> `;
+        html += `<a href="${img.url}" class="file-link" target="_blank">🖼️ ${img.name}</a> `;
     });
     
     return html;
