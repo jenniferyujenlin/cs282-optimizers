@@ -189,18 +189,17 @@ function populateTable(data) {
     tbody.innerHTML = html;
 }
 
-// Generate file download links
+// Generate file download links (only code/document files, not images)
 function generateFileLinks(project) {
     const files = project.files || [];
-    const images = project.images || [];
     
-    if (files.length === 0 && images.length === 0) {
+    if (files.length === 0) {
         return 'N/A';
     }
     
     let html = '';
     
-    // Add file links
+    // Add file links (code, PDFs, etc.)
     files.forEach(file => {
         const icon = getFileIcon(file.type);
         const url = file.url || '';
@@ -214,12 +213,7 @@ function generateFileLinks(project) {
         });
     });
     
-    // Add image links
-    images.forEach(img => {
-        html += `<a href="${img.url}" class="file-link" target="_blank">🖼️ ${img.name}</a> `;
-    });
-    
-    return html;
+    return html || 'N/A';
 }
 
 // Get icon based on file type
