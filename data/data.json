@@ -267,14 +267,14 @@
       "images": [],
       "files": [
         {
-          "name": "Colab Notebook",
-          "url": "https://colab.research.google.com/drive/15gAh01QQKscfbBbXvnGt7MgYOC3j4lTG#scrollTo=ZCwSKgXWW-nk",
-          "type": "colab"
+          "name": "soap_optimizer.ipynb",
+          "url": "data/files/soap_optimizer.ipynb",
+          "type": "ipynb"
         },
         {
-          "name": "Colab Notebook",
-          "url": "https://colab.research.google.com/drive/1-AdCaTn1n6D5ThprVc7sM0A3b7TIx09n#scrollTo=uNGvVyYhYJzP",
-          "type": "colab"
+          "name": "soap_optimizer_solution.ipynb",
+          "url": "data/files/soap_optimizer_solution.ipynb",
+          "type": "ipynb"
         }
       ],
       "ed_id": 492
