@@ -48,8 +48,13 @@
       "images": [],
       "files": [
         {
+          "name": "Yang.ipynb",
+          "url": "data/files/Yang.ipynb",
+          "type": "ipynb"
+        },
+        {
           "name": "Yang_solution.ipynb",
-          "url": "data/files/Yang.ipynb, data/files/Yang_solution.ipynb",
+          "url": "data/files/Yang_solution.ipynb",
           "type": "ipynb"
         }
       ],
@@ -66,8 +71,13 @@
       "images": [],
       "files": [
         {
+          "name": "Garg.ipynb",
+          "url": "data/files/Garg.ipynb",
+          "type": "ipynb"
+        },
+        {
           "name": "Garg_solution.ipynb",
-          "url": "data/files/Garg.ipynb, data/files/Garg_solution.ipynb",
+          "url": "data/files/Garg_solution.ipynb",
           "type": "ipynb"
         }
       ],
@@ -103,8 +113,13 @@
       "images": [],
       "files": [
         {
+          "name": "Gupta.ipynb",
+          "url": "data/files/Gupta.ipynb",
+          "type": "ipynb"
+        },
+        {
           "name": "Gupta_solution.ipynb",
-          "url": "data/files/Gupta.ipynb, data/files/Gupta_solution.ipynb",
+          "url": "data/files/Gupta_solution.ipynb",
           "type": "ipynb"
         }
       ],
@@ -139,8 +154,13 @@
       "images": [],
       "files": [
         {
+          "name": "fantine_mpacko_priso_img.png",
+          "url": "data/files/fantine_mpacko_priso_img.png",
+          "type": "file"
+        },
+        {
           "name": "Priso.ipynb",
-          "url": "data/files/fantine_mpacko_priso_img.png, data/files/Priso.ipynb",
+          "url": "data/files/Priso.ipynb",
           "type": "ipynb"
         }
       ],
@@ -157,8 +177,18 @@
       "images": [],
       "files": [
         {
+          "name": "fantine_mpacko_priso_img2.png",
+          "url": "data/files/fantine_mpacko_priso_img2.png",
+          "type": "file"
+        },
+        {
+          "name": "Priso2.ipynb",
+          "url": "data/files/Priso2.ipynb",
+          "type": "ipynb"
+        },
+        {
           "name": "Priso_solution2.ipynb",
-          "url": "data/files/fantine_mpacko_priso_img2.png, data/files/Priso2.ipynb, data/files/Priso_solution2.ipynb",
+          "url": "data/files/Priso_solution2.ipynb",
           "type": "ipynb"
         }
       ],
@@ -195,8 +225,13 @@
       "images": [],
       "files": [
         {
+          "name": "NRW_SP_D_q_coding_muon_BLANK.ipynb",
+          "url": "data/files/NRW_SP_D_q_coding_muon_BLANK.ipynb",
+          "type": "ipynb"
+        },
+        {
           "name": "NRW_SP_D_q_coding_muon_SOLUTION.ipynb",
-          "url": "data/files/NRW_SP_D_q_coding_muon_BLANK.ipynb, data/files/NRW_SP_D_q_coding_muon_SOLUTION.ipynb",
+          "url": "data/files/NRW_SP_D_q_coding_muon_SOLUTION.ipynb",
           "type": "ipynb"
         }
       ],
@@ -256,8 +291,18 @@
       "images": [],
       "files": [
         {
+          "name": "diana_kohr_img1.png",
+          "url": "data/files/diana_kohr_img1.png",
+          "type": "file"
+        },
+        {
+          "name": "diana_kohr_img2.png",
+          "url": "data/files/diana_kohr_img2.png",
+          "type": "file"
+        },
+        {
           "name": "Kohr.ipynb",
-          "url": "data/files/diana_kohr_img1.png, data/files/diana_kohr_img2.png, data/files/Kohr.ipynb",
+          "url": "data/files/Kohr.ipynb",
           "type": "ipynb"
         }
       ],
@@ -274,8 +319,18 @@
       "images": [],
       "files": [
         {
+          "name": "nazar_ospanov_img.png",
+          "url": "data/files/nazar_ospanov_img.png",
+          "type": "file"
+        },
+        {
+          "name": "Ospanov.zip",
+          "url": "data/files/Ospanov.zip",
+          "type": "zip"
+        },
+        {
           "name": "Ospanov_solution.zip",
-          "url": "data/files/nazar_ospanov_img.png, data/files/Ospanov.zip, data/files/Ospanov_solution.zip",
+          "url": "data/files/Ospanov_solution.zip",
           "type": "zip"
         }
       ],
@@ -292,8 +347,13 @@
       "images": [],
       "files": [
         {
+          "name": "Ospanov2.zip",
+          "url": "data/files/Ospanov2.zip",
+          "type": "zip"
+        },
+        {
           "name": "Ospanov_solution2.zip",
-          "url": "data/files/Ospanov2.zip, data/files/Ospanov_solution2.zip",
+          "url": "data/files/Ospanov_solution2.zip",
           "type": "zip"
         }
       ],
