@@ -173,14 +173,14 @@
 
         function displayProject(project) {
             const content = document.getElementById('project-content');
-            
+           
             // Generate files HTML
             let filesHtml = '';
             if (project.files && project.files.length > 0) {
                 project.files.forEach(file => {
                     const icon = getFileIcon(file.type);
                     const urls = (file.url || '').split(',').map(u => u.trim());
-                    
+                   
                     urls.forEach((url, idx) => {
                         const linkText = urls.length > 1 ? `${file.name} (${idx + 1})` : file.name;
                         filesHtml += `
@@ -194,17 +194,17 @@
                     });
                 });
             }
-            
-            // Generate images HTML
+           
+            // Generate images HTML (for inline display in summary)
             let imagesHtml = '';
             if (project.images && project.images.length > 0) {
-                imagesHtml = '<div class="detail-section"><div class="detail-label">Images</div><div class="images-gallery">';
+                imagesHtml = '<div class="images-gallery">';
                 project.images.forEach(img => {
                     imagesHtml += `<img src="${img.url}" alt="${img.name}" onclick="window.open('${img.url}', '_blank')">`;
                 });
-                imagesHtml += '</div></div>';
+                imagesHtml += '</div>';
             }
-            
+           
             content.innerHTML = `
                 <div class="project-header">
                     <h1>${project.title}</h1>
@@ -218,11 +218,12 @@
                 ${project.summary ? `
                     <div class="detail-section">
                         <div class="detail-label">Summary</div>
-                        <div class="detail-value">${project.summary}</div>
+                        <div class="detail-value">
+                            ${project.summary}
+                            ${imagesHtml}
+                        </div>
                     </div>
                 ` : ''}
-
-                ${imagesHtml}
 
                 <div class="detail-section">
                     <div class="detail-label">Downloads</div>

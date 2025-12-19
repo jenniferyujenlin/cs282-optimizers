@@ -151,13 +151,14 @@
       "optimizer": [
         "Lion"
       ],
-      "images": [],
-      "files": [
+      "images": [
         {
           "name": "fantine_mpacko_priso_img.png",
           "url": "data/files/fantine_mpacko_priso_img.png",
           "type": "file"
-        },
+        }
+      ],
+      "files": [
         {
           "name": "Priso.ipynb",
           "url": "data/files/Priso.ipynb",
@@ -174,13 +175,14 @@
       "optimizer": [
         "Muon"
       ],
-      "images": [],
-      "files": [
+      "images": [
         {
           "name": "fantine_mpacko_priso_img2.png",
           "url": "data/files/fantine_mpacko_priso_img2.png",
           "type": "file"
-        },
+        }
+      ],
+      "files": [
         {
           "name": "Priso2.ipynb",
           "url": "data/files/Priso2.ipynb",
@@ -203,7 +205,13 @@
         "Lion",
         "SOAP"
       ],
-      "images": [],
+      "images": [
+        {
+          "name": "jiayi_zhang_img.png",
+          "url": "data/files/jiayi_zhang_img.png",
+          "type": "file"
+        }
+      ],
       "files": [
         {
           "name": "q_coding_muon.ipynb",
@@ -222,7 +230,13 @@
         "Lion",
         "Muon variants"
       ],
-      "images": [],
+      "images": [
+        {
+          "name": "nicolas_raultl-wang_img.png",
+          "url": "data/files/nicolas_raultl-wang_img.png",
+          "type": "file"
+        }
+      ],
       "files": [
         {
           "name": "NRW_SP_D_q_coding_muon_BLANK.ipynb",
@@ -288,8 +302,7 @@
         "Lion",
         "Muon"
       ],
-      "images": [],
-      "files": [
+      "images": [
         {
           "name": "diana_kohr_img1.png",
           "url": "data/files/diana_kohr_img1.png",
@@ -299,7 +312,9 @@
           "name": "diana_kohr_img2.png",
           "url": "data/files/diana_kohr_img2.png",
           "type": "file"
-        },
+        }
+      ],
+      "files": [
         {
           "name": "Kohr.ipynb",
           "url": "data/files/Kohr.ipynb",
@@ -318,11 +333,6 @@
       ],
       "images": [],
       "files": [
-        {
-          "name": "nazar_ospanov_img.png",
-          "url": "data/files/nazar_ospanov_img.png",
-          "type": "file"
-        },
         {
           "name": "Ospanov.zip",
           "url": "data/files/Ospanov.zip",
