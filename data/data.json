@@ -2,7 +2,7 @@
   "submissions": [
     {
       "student_name": "Abdelaziz Mohamed",
-      "hw": 3,
+      "hw": 12,
       "title": "Shampoo + Adafactor for HW12",
       "summary": "",
       "optimizer": [
@@ -62,7 +62,7 @@
     },
     {
       "student_name": "Ishir Garg",
-      "hw": 4,
+      "hw": 7,
       "title": "MuP in Hw7",
       "summary": "I created an extension to Q1 of HW7 that tries to reinforce the ideas in MuP in the context of RNNs. There are two main parts of this notebook:\n1. Personally, I always found it confusing whether the correct MuP initialization was 1 / n, or 1 / sqrt(n), or something else, so the first part tries to empirically examine the correct initialization scheme  and connect this to an eigenvalue analysis for RNNs.\n2. The second part empirically shows how per-layer learning rates in an RNN can help for better hyper-parameter transfer on a dataset.\nI created both a solutions and student notebook, attached below",
       "optimizer": [
