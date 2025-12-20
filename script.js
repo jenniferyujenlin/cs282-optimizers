@@ -38,9 +38,9 @@ function generateMatrix() {
         'MuP',
         'Muon',
         'Muon variants',
-        'SOAP',
         'Lion',
         'Shampoo',
+        'SOAP',
         'LR with batchsize'
     ];
     
